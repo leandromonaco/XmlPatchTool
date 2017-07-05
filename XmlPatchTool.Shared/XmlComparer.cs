@@ -4,9 +4,9 @@ using Microsoft.XmlDiffPatch;
 
 namespace XmlPatchTool.Shared
 {
-    public class XmlComparer
+    public class XmlComparer: IXmlComparer
     {
-        public static ComparisonResult CompareXmlFiles(string xmlContent1, string xmlContent2, out string diff)
+        public ComparisonResult CompareXmlFiles(string xmlContent1, string xmlContent2, out string diff)
         {
             //Load Xml Content
             /****************************************************************************/
