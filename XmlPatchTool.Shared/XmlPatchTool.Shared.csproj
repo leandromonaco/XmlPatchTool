@@ -48,9 +48,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComparisonResult.cs" />
-    <Compile Include="IXmlComparer.cs" />
-    <Compile Include="XmlComparer.cs" />
+    <Compile Include="Model\DiffFileProcessResult.cs" />
+    <Compile Include="Model\XmlComparisonResult.cs" />
+    <Compile Include="Interface\IProcessor.cs" />
+    <Compile Include="Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

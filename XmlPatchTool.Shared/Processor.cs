@@ -1,12 +1,14 @@
 ﻿using System.IO;
 using System.Xml;
 using Microsoft.XmlDiffPatch;
+using XmlPatchTool.Shared.Interface;
+using XmlPatchTool.Shared.Model;
 
 namespace XmlPatchTool.Shared
 {
-    public class XmlComparer: IXmlComparer
+    public class Processor: IProcessor
     {
-        public ComparisonResult CompareXmlFiles(string xmlContent1, string xmlContent2, out string diff)
+        public XmlComparisonResult CompareXmlFiles(string xmlContent1, string xmlContent2)
         {
             //Load Xml Content
             /****************************************************************************/
@@ -35,12 +37,17 @@ namespace XmlPatchTool.Shared
             //Convert diff content to string
             memStream.Position = 0;
             var sr = new StreamReader(memStream);
-            diff = sr.ReadToEnd();
+            var diff = sr.ReadToEnd();
 
             //Added temporarily to make the unit test pass. TODO: Comparison Result Generator based on Diff file.
-            var result = new ComparisonResult {TextChanges = 1};
+            var result = new XmlComparisonResult {TextChanges = 1, Diff = diff};
 
             return result;
+        }
+
+        public DiffFileProcessResult ProcessDiffFile(string diffFile)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
