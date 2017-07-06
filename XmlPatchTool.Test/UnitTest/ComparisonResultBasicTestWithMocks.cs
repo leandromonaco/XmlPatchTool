@@ -1,10 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using XmlPatchTool.Shared;
 using XmlPatchTool.Shared.Interface;
 using XmlPatchTool.Shared.Model;
 
-namespace XmlPatchTool.Test
+namespace XmlPatchTool.Test.UnitTest
 {
     [TestClass]
     public class ComparisonResultBasicTestWithMocks

@@ -2,7 +2,7 @@
 {
     public class DiffFileProcessResult
     {
-        public string Status { get; set; } //TODO: use enum
+        public bool IsSucessful { get; set; }
         public string Script { get; set; }
         public string Report { get; set; }
     }

@@ -8,6 +8,11 @@ namespace XmlPatchTool.Shared
 {
     public class Processor: IProcessor
     {
+        public string PrepareXmlFile(string xmlContent)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public XmlComparisonResult CompareXmlFiles(string xmlContent1, string xmlContent2)
         {
             //Load Xml Content
