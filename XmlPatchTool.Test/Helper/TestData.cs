@@ -1,4 +1,4 @@
-﻿namespace XmlPatchTool.Test
+﻿namespace XmlPatchTool.Test.Helper
 {
     public class TestData
     {

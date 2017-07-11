@@ -13,7 +13,13 @@ namespace XmlPatchTool.Shared
             throw new System.NotImplementedException();
         }
 
-        public XmlComparisonResult CompareXmlFiles(string xmlContent1, string xmlContent2)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xmlContent1"></param>
+        /// <param name="xmlContent2"></param>
+        /// <returns>Diff String</returns>
+        public string CompareXmlFiles(string xmlContent1, string xmlContent2)
         {
             //Load Xml Content
             /****************************************************************************/
@@ -44,15 +50,13 @@ namespace XmlPatchTool.Shared
             var sr = new StreamReader(memStream);
             var diff = sr.ReadToEnd();
 
-            //Added temporarily to make the unit test pass. TODO: Comparison Result Generator based on Diff file.
-            var result = new XmlComparisonResult {TextChanges = 1, Diff = diff};
-
-            return result;
+            return diff;
         }
 
         public DiffFileProcessResult ProcessDiffFile(string diffFile)
         {
-            throw new System.NotImplementedException();
+            var diffFileProcessResult = new DiffFileProcessResult();
+            return diffFileProcessResult;
         }
     }
 }

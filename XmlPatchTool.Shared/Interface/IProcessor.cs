@@ -19,8 +19,8 @@ namespace XmlPatchTool.Shared.Interface
         /// </summary>
         /// <param name="xmlContent1"></param>
         /// <param name="xmlContent2"></param>
-        /// <returns></returns>
-        XmlComparisonResult CompareXmlFiles(string xmlContent1, string xmlContent2);
+        /// <returns>Diff string</returns>
+        string CompareXmlFiles(string xmlContent1, string xmlContent2);
 
         /// <summary>
         /// 

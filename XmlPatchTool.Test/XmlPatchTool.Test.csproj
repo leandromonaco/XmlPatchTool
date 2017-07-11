@@ -52,6 +52,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
     <Reference Include="TechTalk.SpecFlow, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.2.2.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
@@ -65,16 +66,22 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest\ComparisonResultBasicTestWithMocks.cs" />
-    <Compile Include="UnitTest\ComparisonResultBasicTestDependencyInjection.cs" />
+    <Compile Include="Scenarios\SpecFlowXmlComparison1.feature.cs">
+      <DependentUpon>SpecFlowXmlComparison.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="UnitTest\SpecFlowXmlComparison.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestData.cs" />
-    <Compile Include="TestHelper.cs" />
+    <Compile Include="Helper\TestData.cs" />
+    <Compile Include="Helper\TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XmlPatchTool.Shared\XmlPatchTool.Shared.csproj">
@@ -92,17 +99,30 @@
     <Content Include="Diff Samples\RemoveAttribute.xml" />
     <Content Include="Diff Samples\RemoveNode.xml" />
     <Content Include="Diff Samples\RemoveText.xml" />
-    <Content Include="Test Cases\1_AttributeChange.xml">
+    <Content Include="Sources\NoChanges.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sources\1_TextChange.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sources\1_NodeChange.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sources\1_AttributeChange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+    <None Include="Scenarios\SpecFlowXmlComparison.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowXmlComparison1.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scenarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
