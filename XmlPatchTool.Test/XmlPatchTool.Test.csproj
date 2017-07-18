@@ -80,8 +80,6 @@
     </Compile>
     <Compile Include="UnitTest\SpecFlowXmlComparison.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helper\TestData.cs" />
-    <Compile Include="Helper\TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XmlPatchTool.Shared\XmlPatchTool.Shared.csproj">
@@ -99,16 +97,16 @@
     <Content Include="Diff Samples\RemoveAttribute.xml" />
     <Content Include="Diff Samples\RemoveNode.xml" />
     <Content Include="Diff Samples\RemoveText.xml" />
-    <Content Include="Sources\NoChanges.xml">
+    <Content Include="Sources\FileA_NodeChange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sources\1_TextChange.xml">
+    <Content Include="Sources\FileA_TextChange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sources\1_NodeChange.xml">
+    <Content Include="Sources\FileA_AttributeChange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sources\1_AttributeChange.xml">
+    <Content Include="Sources\FileA.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

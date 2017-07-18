@@ -68,7 +68,7 @@ namespace XmlPatchTool.Test.Scenarios
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void Compare2XMLFiles(string file, string nodeChangesValue, string attributeChangesValue, string valueChangesValue, string changesFlag, string[] exampleTags)
+        public virtual void Compare2XMLFiles(string file1, string file2, string nodeChangesValue, string attributeChangesValue, string valueChangesValue, string changesFlag, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "XmlPatchTool"};
@@ -80,7 +80,7 @@ namespace XmlPatchTool.Test.Scenarios
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given(string.Format("I use file {0}", file), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I use file {0} And {1}", file1, file2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.When("I compare xml files", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
@@ -96,19 +96,20 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Compare 2 XML files: NoChanges.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Compare 2 XML files: FileA.xml")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenarios")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("XmlPatchTool")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "NoChanges.xml")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File", "NoChanges.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA.xml")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ValueChangesValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "false")]
-        public virtual void Compare2XMLFiles_NoChanges_Xml()
+        public virtual void Compare2XMLFiles_FileA_Xml()
         {
 #line 7
-this.Compare2XMLFiles("NoChanges.xml", "0", "0", "0", "false", ((string[])(null)));
+this.Compare2XMLFiles("FileA.xml", "FileA.xml", "0", "0", "0", "false", ((string[])(null)));
 #line hidden
         }
     }

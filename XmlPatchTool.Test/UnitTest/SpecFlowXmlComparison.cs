@@ -1,8 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 using TechTalk.SpecFlow;
 using XmlPatchTool.Shared;
+using XmlPatchTool.Shared.Connectors;
 using XmlPatchTool.Shared.Model;
-using XmlPatchTool.Test.Helper;
 
 namespace XmlPatchTool.Test.UnitTest
 {
@@ -10,20 +11,24 @@ namespace XmlPatchTool.Test.UnitTest
     public partial class ScenariosFeature
     {
         private DiffFileProcessResult _diffResult;
-        private TestData _testData;
+        private string _xmlFileContent1;
+        private string _xmlFileContent2;
 
-        [Given(@"I use file (.*)")]
-        public void GivenIUseFile(string file)
+        [Given(@"I use file (.*) And (.*)")]
+        public void GivenIUseFileFileAndNoChanges_Xml(string file1, string file2)
         {
-            var testHelper = new TestHelper();
-            _testData = testHelper.GetTestDataFromXml(file);
+            var fileSystemIntegrator = new FileSystemConnector();
+            var sourceFolder = Path.Combine(Directory.GetCurrentDirectory(), "Sources");
+            _xmlFileContent1 = fileSystemIntegrator.GetXmlContent($"{sourceFolder}\\{file1}");
+            _xmlFileContent2 = fileSystemIntegrator.GetXmlContent($"{sourceFolder}\\{file2}");
         }
+
 
         [When(@"I compare xml files")]
         public void WhenICompareXmlFiles()
         {
             var processor = new Processor();
-            var diffString = processor.CompareXmlFiles(_testData.XmlFileContent1, _testData.XmlFileContent2);
+            var diffString = processor.CompareXmlFiles(_xmlFileContent1, _xmlFileContent2);
             _diffResult = processor.ProcessDiffFile(diffString);
         }
 

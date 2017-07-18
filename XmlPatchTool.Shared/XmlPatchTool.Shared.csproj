@@ -48,6 +48,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conectors\FileSystemConnector.cs" />
+    <Compile Include="Conectors\TFSConnector.cs" />
+    <Compile Include="Interface\IConnector.cs" />
     <Compile Include="Model\DiffFileProcessResult.cs" />
     <Compile Include="Model\XmlComparisonResult.cs" />
     <Compile Include="Interface\IProcessor.cs" />
