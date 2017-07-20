@@ -1,8 +1,17 @@
-﻿<a attributeA="ValueA">
-  <b>
-    <d></d>
-  </b>
-  <c>
-    <g></g>
-  </c>
-</a>
+﻿<Level0 AttributeA="ValueA">
+  <Level1 AttributeA="ValueA">
+    <Level2 AttributeA="ValueA">TEXT</Level2>
+  </Level1>
+  <Level1 AttributeA="ValueA">
+    <Level2_Changed AttributeA="ValueA">
+      <Level3  AttributeA="ValueA">TEXT</Level3>
+    </Level2_Changed>
+  </Level1>
+  <Level1_Changed AttributeA="ValueA">
+    <Level2 AttributeA="ValueA">
+      <Level3  AttributeA="ValueA">
+        <Level4_Changed AttributeA="ValueA">TEXT</Level4_Changed>
+      </Level3>
+    </Level2>
+  </Level1_Changed>
+</Level0>

@@ -97,6 +97,7 @@
     <Content Include="Diff Samples\RemoveAttribute.xml" />
     <Content Include="Diff Samples\RemoveNode.xml" />
     <Content Include="Diff Samples\RemoveText.xml" />
+    <Content Include="Readme.txt" />
     <Content Include="Sources\FileA_NodeChange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

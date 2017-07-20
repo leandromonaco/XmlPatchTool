@@ -12,10 +12,10 @@ Scenario Outline: Compare 2 XML files
 	And  the Text Changes should be <ValueChangesValue>
 	And  Changes flag should be <ChangesFlag>
 Examples:
-		| File1					| File2					| NodeChangesValue  | AttributeChangesValue | ValueChangesValue		| ChangesFlag	|
-		| FileA.xml				| FileA.xml				| 0					| 0						| 0						| false			|
-#		| File1					| 1_NodeChange.xml		| 1					| 0						| 0						| true			|
-#		| File1					| 1_AttributeChange.xml	| 0					| 1						| 0						| true			|
-#		| File1					| 1_TextChange.xml		| 0					| 0						| 1						| true			|		
+		| File1					| File2						| NodeChangesValue  | AttributeChangesValue | ValueChangesValue		| ChangesFlag	|
+		| FileA.xml				| FileA.xml					| 0					| 0						| 0						| false			|
+		| FileA.xml				| FileA_NodeChange.xml		| 3					| 0						| 0						| true			|
+		| FileA.xml				| FileA_AttributeChange.xml	| 0					| 10					| 0						| true			|
+		| FileA.xml				| FileA_TextChange.xml		| 0					| 0						| 3						| true			|		
 
 

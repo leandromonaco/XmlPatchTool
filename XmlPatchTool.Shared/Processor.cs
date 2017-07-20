@@ -3,6 +3,8 @@ using System.Xml;
 using Microsoft.XmlDiffPatch;
 using XmlPatchTool.Shared.Interface;
 using XmlPatchTool.Shared.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace XmlPatchTool.Shared
 {
@@ -55,8 +57,28 @@ namespace XmlPatchTool.Shared
 
         public DiffFileProcessResult ProcessDiffFile(string diffFile)
         {
-            var diffFileProcessResult = new DiffFileProcessResult();
+            var xmlDiffFile = new XmlDocument();
+            xmlDiffFile.LoadXml(diffFile);
+
+            var nsmgr = new XmlNamespaceManager(xmlDiffFile.NameTable);
+            nsmgr.AddNamespace("xd", "http://schemas.microsoft.com/xmltools/2002/xmldiff");
+
+            //get xml attribute changes with hierarchy of parent nodes
+            var nodeChanges = xmlDiffFile.SelectNodes("//xd:change[string(number(@match)) != 'NaN' and not(text())]/@match/parent::*", nsmgr);
+            var attributeChanges = xmlDiffFile.SelectNodes("//xd:change[starts-with(@match, '@')]/@match/parent::*", nsmgr);
+            var textChanges = xmlDiffFile.SelectNodes("//xd:change[string(number(@match)) != 'NaN' and text() != '']/@match/parent::*", nsmgr);
+
+            var diffFileProcessResult = new DiffFileProcessResult(nodeChanges, 
+                                                                  attributeChanges, 
+                                                                  textChanges);
             return diffFileProcessResult;
+        }
+
+        private void GetPathToRoot(XmlNode node, List<XmlNode> path)
+        {
+            if (node == null) return; // previous node was the root.
+            path.Add(node);
+            GetPathToRoot(node.ParentNode, path);
         }
     }
 }
