@@ -1,6 +1,6 @@
 ﻿using XmlPatchTool.Shared.Model;
 
-namespace XmlPatchTool.Shared.Interface
+namespace XmlPatchTool.Shared.Interfaces
 {
     public interface ITranslator
     {

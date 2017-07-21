@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using System.Xml;
 using Microsoft.XmlDiffPatch;
-using XmlPatchTool.Shared.Interface;
 using XmlPatchTool.Shared.Model;
+using XmlPatchTool.Shared.Interfaces;
 
-namespace XmlPatchTool.Shared
+namespace XmlPatchTool.Shared.Comparers
 {
     public class Comparer: IComparer
     {

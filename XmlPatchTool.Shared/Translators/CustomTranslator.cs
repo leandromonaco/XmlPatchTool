@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using XmlPatchTool.Shared.Interface;
+using XmlPatchTool.Shared.Interfaces;
 using XmlPatchTool.Shared.Model;
 
 namespace XmlPatchTool.Shared.Translators

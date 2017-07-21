@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using TechTalk.SpecFlow;
-using XmlPatchTool.Shared;
+using XmlPatchTool.Shared.Comparers;
 using XmlPatchTool.Shared.Connectors;
 using XmlPatchTool.Shared.Model;
 

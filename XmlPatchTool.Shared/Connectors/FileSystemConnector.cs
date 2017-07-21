@@ -1,5 +1,5 @@
 ﻿using System.Xml;
-using XmlPatchTool.Shared.Interface;
+using XmlPatchTool.Shared.Interfaces;
 
 namespace XmlPatchTool.Shared.Connectors
 {

@@ -1,4 +1,4 @@
-﻿namespace XmlPatchTool.Shared.Interface
+﻿namespace XmlPatchTool.Shared.Interfaces
 {
     public interface IConnector
     {

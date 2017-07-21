@@ -48,14 +48,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conectors\FileSystemConnector.cs" />
-    <Compile Include="Conectors\TFSConnector.cs" />
-    <Compile Include="Interface\ITranslator.cs" />
-    <Compile Include="Interface\IConnector.cs" />
+    <Compile Include="Connectors\FileSystemConnector.cs" />
+    <Compile Include="Connectors\TFSConnector.cs" />
+    <Compile Include="Interfaces\ITranslator.cs" />
+    <Compile Include="Interfaces\IConnector.cs" />
     <Compile Include="Model\DiffFileProcessResult.cs" />
     <Compile Include="Model\XmlComparisonResult.cs" />
-    <Compile Include="Interface\IComparer.cs" />
-    <Compile Include="Comparer.cs" />
+    <Compile Include="Interfaces\IComparer.cs" />
+    <Compile Include="Comparers\Comparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Translators\CustomTranslator.cs" />
     <Compile Include="Translators\SqlTranslator.cs" />
