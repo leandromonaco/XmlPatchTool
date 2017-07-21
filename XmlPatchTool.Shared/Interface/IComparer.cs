@@ -5,7 +5,7 @@ namespace XmlPatchTool.Shared.Interface
     /// <summary>
     /// 
     /// </summary>
-    public interface IProcessor
+    public interface IComparer
     {
         /// <summary>
         /// 

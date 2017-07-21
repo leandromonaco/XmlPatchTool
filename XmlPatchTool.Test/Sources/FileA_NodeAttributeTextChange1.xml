@@ -1,0 +1,17 @@
+﻿<Level0_Changed AttributeA="ValueA">
+  <Level1 AttributeA="ValueB">
+    <Level2 AttributeA="ValueB">TEXT</Level2>
+  </Level1>
+  <Level1_Changed AttributeA="ValueA">
+    <Level2_Changed AttributeA="ValueB">
+      <Level3  AttributeA="ValueA">TEXT_Changed</Level3>
+    </Level2_Changed>
+  </Level1_Changed>
+  <Level1_Changed AttributeA="ValueA">
+    <Level2 AttributeA="ValueA">
+      <Level3  AttributeA="ValueA">
+        <Level4 AttributeA="ValueA">TEXT_Changed</Level4>
+      </Level3>
+    </Level2>
+  </Level1_Changed>
+</Level0_Changed>

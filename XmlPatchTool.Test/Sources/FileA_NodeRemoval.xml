@@ -1,0 +1,13 @@
+﻿<Level0 AttributeA="ValueA">
+  <Level1 AttributeA="ValueA">
+    <Level2 AttributeA="ValueA">TEXT</Level2>
+  </Level1>
+  <Level1 AttributeA="ValueA">
+  </Level1>
+  <Level1 AttributeA="ValueA">
+    <Level2 AttributeA="ValueA">
+      <Level3  AttributeA="ValueA">
+      </Level3>
+    </Level2>
+  </Level1>
+</Level0>

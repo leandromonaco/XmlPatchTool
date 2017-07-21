@@ -3,15 +3,14 @@ using System.Xml;
 using Microsoft.XmlDiffPatch;
 using XmlPatchTool.Shared.Interface;
 using XmlPatchTool.Shared.Model;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace XmlPatchTool.Shared
 {
-    public class Processor: IProcessor
+    public class Comparer: IComparer
     {
         public string PrepareXmlFile(string xmlContent)
         {
+            //TODO: This method will align the format in case the order for the comparison is different.
             throw new System.NotImplementedException();
         }
 
@@ -63,22 +62,27 @@ namespace XmlPatchTool.Shared
             var nsmgr = new XmlNamespaceManager(xmlDiffFile.NameTable);
             nsmgr.AddNamespace("xd", "http://schemas.microsoft.com/xmltools/2002/xmldiff");
 
-            //get xml attribute changes with hierarchy of parent nodes
+            //parent::* gets the hierarchy with all the parent nodes
+            var nodeAdditions = xmlDiffFile.SelectNodes("//xd:add[text() = '']/parent::*", nsmgr);
+            var nodeOrTextRemovals = xmlDiffFile.SelectNodes("//xd:remove[string(number(@match)) != 'NaN']/parent::*", nsmgr);
             var nodeChanges = xmlDiffFile.SelectNodes("//xd:change[string(number(@match)) != 'NaN' and not(text())]/@match/parent::*", nsmgr);
+
+            var attributeAdditions = xmlDiffFile.SelectNodes("//xd:add/@type/parent::*", nsmgr);
+            var attributeRemovals = xmlDiffFile.SelectNodes("//xd:remove[starts-with(@match, '@')]/parent::*", nsmgr);
             var attributeChanges = xmlDiffFile.SelectNodes("//xd:change[starts-with(@match, '@')]/@match/parent::*", nsmgr);
+
+            var textAdditions = xmlDiffFile.SelectNodes("//xd:add[text() != '']/parent::*", nsmgr);
             var textChanges = xmlDiffFile.SelectNodes("//xd:change[string(number(@match)) != 'NaN' and text() != '']/@match/parent::*", nsmgr);
 
-            var diffFileProcessResult = new DiffFileProcessResult(nodeChanges, 
-                                                                  attributeChanges, 
+            var diffFileProcessResult = new DiffFileProcessResult(nodeAdditions,
+                                                                  nodeOrTextRemovals,
+                                                                  nodeChanges,
+                                                                  attributeAdditions,
+                                                                  attributeRemovals,
+                                                                  attributeChanges,
+                                                                  textAdditions,
                                                                   textChanges);
             return diffFileProcessResult;
-        }
-
-        private void GetPathToRoot(XmlNode node, List<XmlNode> path)
-        {
-            if (node == null) return; // previous node was the root.
-            path.Add(node);
-            GetPathToRoot(node.ParentNode, path);
         }
     }
 }

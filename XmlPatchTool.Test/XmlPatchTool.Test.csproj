@@ -98,6 +98,21 @@
     <Content Include="Diff Samples\RemoveNode.xml" />
     <Content Include="Diff Samples\RemoveText.xml" />
     <Content Include="Readme.txt" />
+    <Content Include="Sources\FileA_NodeOrTextRemoval.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sources\FileA_TextRemoval.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sources\FileA_NodeRemoval.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sources\FileA_AttributeRemoval.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sources\FileA_NodeAttributeTextChange1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sources\FileA_NodeChange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

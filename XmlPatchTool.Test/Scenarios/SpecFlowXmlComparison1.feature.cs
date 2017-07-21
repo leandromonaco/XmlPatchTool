@@ -68,7 +68,7 @@ namespace XmlPatchTool.Test.Scenarios
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void Compare2XMLFiles(string file1, string file2, string nodeChangesValue, string attributeChangesValue, string valueChangesValue, string changesFlag, string[] exampleTags)
+        public virtual void Compare2XMLFiles(string file1, string file2, string nodeAdditionsValue, string nodeOrTextRemovalsValue, string nodeChangesValue, string attributeAdditionsValue, string attributeRemovalsValue, string attributeChangesValue, string textAdditionsValue, string textChangesValue, string changesFlag, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "XmlPatchTool"};
@@ -84,12 +84,22 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.When("I compare xml files", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then(string.Format("the Node Changes should be {0}", nodeChangesValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the Node Additions should be {0}", nodeAdditionsValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
- testRunner.And(string.Format("the Attribute Changes should be {0}", attributeChangesValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the Node or Text Removals should be {0}", nodeOrTextRemovalsValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And(string.Format("the Text Changes should be {0}", valueChangesValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the Node Changes should be {0}", nodeChangesValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
+ testRunner.And(string.Format("the Attribute Additions should be {0}", attributeAdditionsValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.And(string.Format("the Attribute Removals should be {0}", attributeRemovalsValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And(string.Format("the Attribute Changes should be {0}", attributeChangesValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And(string.Format("the Text Additions should be {0}", textAdditionsValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And(string.Format("the Text Changes should be {0}", textChangesValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
  testRunner.And(string.Format("Changes flag should be {0}", changesFlag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -102,14 +112,19 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ValueChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "false")]
         public virtual void Compare2XMLFiles_Variant0()
         {
 #line 7
-this.Compare2XMLFiles("FileA.xml", "FileA.xml", "0", "0", "0", "false", ((string[])(null)));
+this.Compare2XMLFiles("FileA.xml", "FileA.xml", "0", "0", "0", "0", "0", "0", "0", "0", "false", ((string[])(null)));
 #line hidden
         }
         
@@ -120,14 +135,19 @@ this.Compare2XMLFiles("FileA.xml", "FileA.xml", "0", "0", "0", "false", ((string
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_NodeChange.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ValueChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
         public virtual void Compare2XMLFiles_Variant1()
         {
 #line 7
-this.Compare2XMLFiles("FileA.xml", "FileA_NodeChange.xml", "3", "0", "0", "true", ((string[])(null)));
+this.Compare2XMLFiles("FileA.xml", "FileA_NodeChange.xml", "0", "0", "3", "0", "0", "0", "0", "0", "true", ((string[])(null)));
 #line hidden
         }
         
@@ -138,14 +158,19 @@ this.Compare2XMLFiles("FileA.xml", "FileA_NodeChange.xml", "3", "0", "0", "true"
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_AttributeChange.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "10")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ValueChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
         public virtual void Compare2XMLFiles_Variant2()
         {
 #line 7
-this.Compare2XMLFiles("FileA.xml", "FileA_AttributeChange.xml", "0", "10", "0", "true", ((string[])(null)));
+this.Compare2XMLFiles("FileA.xml", "FileA_AttributeChange.xml", "0", "0", "0", "0", "0", "10", "0", "0", "true", ((string[])(null)));
 #line hidden
         }
         
@@ -156,14 +181,134 @@ this.Compare2XMLFiles("FileA.xml", "FileA_AttributeChange.xml", "0", "10", "0", 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_TextChange.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ValueChangesValue", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
         public virtual void Compare2XMLFiles_Variant3()
         {
 #line 7
-this.Compare2XMLFiles("FileA.xml", "FileA_TextChange.xml", "0", "0", "3", "true", ((string[])(null)));
+this.Compare2XMLFiles("FileA.xml", "FileA_TextChange.xml", "0", "0", "0", "0", "0", "0", "0", "3", "true", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Compare 2 XML files: Variant 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenarios")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("XmlPatchTool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_NodeAttributeTextChange1.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
+        public virtual void Compare2XMLFiles_Variant4()
+        {
+#line 7
+this.Compare2XMLFiles("FileA.xml", "FileA_NodeAttributeTextChange1.xml", "0", "0", "4", "0", "0", "3", "0", "2", "true", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Compare 2 XML files: Variant 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenarios")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("XmlPatchTool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_AttributeRemoval.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
+        public virtual void Compare2XMLFiles_Variant5()
+        {
+#line 7
+this.Compare2XMLFiles("FileA.xml", "FileA_AttributeRemoval.xml", "0", "0", "0", "0", "10", "0", "0", "0", "true", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Compare 2 XML files: Variant 6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenarios")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("XmlPatchTool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_NodeRemoval.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
+        public virtual void Compare2XMLFiles_Variant6()
+        {
+#line 7
+this.Compare2XMLFiles("FileA.xml", "FileA_NodeRemoval.xml", "0", "2", "0", "0", "0", "0", "0", "0", "true", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Compare 2 XML files: Variant 7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenarios")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("XmlPatchTool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_TextRemoval.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
+        public virtual void Compare2XMLFiles_Variant7()
+        {
+#line 7
+this.Compare2XMLFiles("FileA.xml", "FileA_TextRemoval.xml", "0", "2", "0", "0", "0", "0", "0", "0", "true", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Compare 2 XML files: Variant 8")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Scenarios")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("XmlPatchTool")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 8")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File1", "FileA.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:File2", "FileA_NodeOrTextRemoval.xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeOrTextRemovalsValue", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NodeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeRemovalsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AttributeChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextAdditionsValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TextChangesValue", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ChangesFlag", "true")]
+        public virtual void Compare2XMLFiles_Variant8()
+        {
+#line 7
+this.Compare2XMLFiles("FileA.xml", "FileA_NodeOrTextRemoval.xml", "0", "3", "0", "0", "0", "0", "0", "0", "true", ((string[])(null)));
 #line hidden
         }
     }
